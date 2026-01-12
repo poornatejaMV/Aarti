@@ -35,7 +35,7 @@ export default function ContactPage() {
           <div className="container mx-auto px-4">
             <h1 className="text-5xl font-bold text-black text-center mb-4">Contact Us</h1>
             <p className="text-xl text-body text-center max-w-3xl mx-auto">
-              Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+              Have questions? We&apos;d love to hear from you. Send us a message and we&apos;ll respond as soon as possible.
             </p>
           </div>
         </section>
@@ -46,8 +46,8 @@ export default function ContactPage() {
               <div>
                 <h2 className="text-3xl font-bold text-black mb-6">Get in Touch</h2>
                 <p className="text-body text-lg mb-8">
-                  We're here to help! Whether you have questions about our courses, need technical support,
-                  or want to partner with us, we're ready to assist.
+                  We&apos;re here to help! Whether you have questions about our courses, need technical support,
+                  or want to partner with us, we&apos;re ready to assist.
                 </p>
 
                 <div className="space-y-6">

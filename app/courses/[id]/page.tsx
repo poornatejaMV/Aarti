@@ -159,7 +159,7 @@ export default function CourseDetailPage({ params }: CourseDetailPageProps) {
                         <div className="flex items-start justify-between">
                           <div className="flex-1">
                             <h3 className="font-semibold text-black mb-1">{item.title}</h3>
-                            {item.description && (
+                            {'description' in item && item.description && (
                               <p className="text-sm text-body">{item.description}</p>
                             )}
                           </div>
