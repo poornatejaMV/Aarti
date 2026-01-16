@@ -11,7 +11,7 @@ const testimonials = [
     name: 'Maria Garcia',
     role: 'Data Analyst',
     image: '/images/users/user2.jpg',
-    text: 'Excellent instructors and well-structured content. The hands-on projects really helped me understand the concepts.',
+    text: 'Excellent educators and well-structured content. The hands-on projects really helped me understand the concepts.',
   },
   {
     name: 'Robert Chen',

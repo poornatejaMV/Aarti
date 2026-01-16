@@ -40,7 +40,7 @@ export default function Header() {
                 About
               </Link>
               <Link href="/instructors" className="text-black font-medium hover:text-primary transition">
-                Instructors
+                Educators
               </Link>
               <Link href="/blog" className="text-black font-medium hover:text-primary transition">
                 Blog
@@ -119,7 +119,7 @@ export default function Header() {
                 About
               </Link>
               <Link href="/instructors" className="block text-black hover:text-primary font-medium">
-                Instructors
+                Educators
               </Link>
               <Link href="/blog" className="block text-black hover:text-primary font-medium">
                 Blog

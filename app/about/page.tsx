@@ -11,7 +11,7 @@ export default function About() {
           <div className="container mx-auto px-4">
             <h1 className="text-5xl font-bold text-black text-center mb-4">About AARTI</h1>
             <p className="text-xl text-body text-center max-w-3xl mx-auto">
-              Aausaheb Research and Training Institute - A Maratha Youth Empowerment Movement
+              Aausaheb Research and Training Institute - A Youth Empowerment Movement
             </p>
           </div>
         </section>
@@ -20,23 +20,23 @@ export default function About() {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               {/* Legacy Section */}
-              <div className="mb-16">
-                <h2 className="text-3xl font-bold text-black mb-6 text-center">
+              <div className="mb-16 bg-primary py-12 px-8 rounded-2xl">
+                <h2 className="text-3xl font-bold text-white mb-6 text-center">
                   Aausaheb&apos;s Legacy
                 </h2>
-                <p className="text-xl text-center text-paragraph mb-8 italic">
+                <p className="text-xl text-center text-white/90 mb-8 italic">
                   &quot;From Jijau&apos;s Sanskar to AI-driven Skills - Shaping Brave, Bright, and Self-Reliant Minds&quot;
                 </p>
                 <div className="space-y-6">
-                  <div className="bg-gray-50 p-6 rounded-lg">
+                  <div className="bg-white p-6 rounded-lg">
                     <h3 className="text-xl font-semibold text-black mb-2">
                       Instilled Courage and Discipline
                     </h3>
                     <p className="text-paragraph">
-                      Foundation of leadership and resilience; today reflected in entrepreneurial mindset and project ownership.
+                      Foundation of strength and resilience; today reflected in entrepreneurial mindset and project ownership.
                     </p>
                   </div>
-                  <div className="bg-gray-50 p-6 rounded-lg">
+                  <div className="bg-white p-6 rounded-lg">
                     <h3 className="text-xl font-semibold text-black mb-2">
                       Nurtured the Dream of Swaraj
                     </h3>
@@ -44,7 +44,7 @@ export default function About() {
                       Vision of self-reliance; now reborn as Tech Swaraj through AI, robotics, and innovation.
                     </p>
                   </div>
-                  <div className="bg-gray-50 p-6 rounded-lg">
+                  <div className="bg-white p-6 rounded-lg">
                     <h3 className="text-xl font-semibold text-black mb-2">
                       Guided Shivaji with Wisdom and Compassion
                     </h3>
@@ -52,7 +52,7 @@ export default function About() {
                       Model of mentorship; today embodied in value-based learning and emotional intelligence.
                     </p>
                   </div>
-                  <div className="bg-gray-50 p-6 rounded-lg">
+                  <div className="bg-white p-6 rounded-lg">
                     <h3 className="text-xl font-semibold text-black mb-2">
                       Inspired Multilingual and Scholarly Growth
                     </h3>
@@ -60,7 +60,7 @@ export default function About() {
                       Symbol of intellect; today seen in digital fluency, creative thinking, and communication excellence.
                     </p>
                   </div>
-                  <div className="bg-gray-50 p-6 rounded-lg">
+                  <div className="bg-white p-6 rounded-lg">
                     <h3 className="text-xl font-semibold text-black mb-2">
                       Empowered Generations through Sanskar and Vision
                     </h3>
@@ -75,8 +75,8 @@ export default function About() {
               <div className="mb-16 bg-primary/5 p-8 rounded-2xl">
                 <h2 className="text-3xl font-bold text-black mb-6 text-center">Our Vision</h2>
                 <p className="text-lg text-paragraph text-center leading-relaxed">
-                  To empower Maratha youth, inspired by the leadership and legacy of Chhatrapati Maharaj, 
-                  to become skilled, innovative, and entrepreneurial leaders — confident in their abilities, 
+                  To empower all youth, inspired by the legacy of Chhatrapati Maharaj, 
+                  to become skilled, innovative, and entrepreneurial professionals — confident in their abilities, 
                   driving socio-economic growth, and contributing meaningfully to the progress of their 
                   community and the nation.
                 </p>
@@ -149,10 +149,10 @@ export default function About() {
                   </div>
                   <div className="bg-gray-50 p-6 rounded-lg">
                     <h3 className="text-xl font-semibold text-black mb-2">
-                      Cultural & Leadership Values
+                      Cultural & Ethical Values
                     </h3>
                     <p className="text-paragraph">
-                      Ethical leadership & heritage preservation alongside modern skill development.
+                      Ethical values & heritage preservation alongside modern skill development.
                     </p>
                   </div>
                 </div>

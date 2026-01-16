@@ -77,11 +77,11 @@ export default function InstructorsPage() {
             <div className="absolute bottom-10 right-10 w-48 h-48 border-4 border-white rounded-full" />
           </div>
           <div className="container mx-auto px-4 relative z-10">
-            <h1 className="text-5xl font-bold text-white text-center mb-4">Our Instructors</h1>
+            <h1 className="text-5xl font-bold text-white text-center mb-4">Our Educators</h1>
             <div className="flex items-center justify-center gap-2 text-white/80">
               <Link href="/" className="hover:text-white">Home</Link>
               <span>›</span>
-              <span>Instructors</span>
+              <span>Educators</span>
             </div>
           </div>
         </section>

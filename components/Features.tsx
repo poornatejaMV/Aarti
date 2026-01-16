@@ -36,9 +36,9 @@ export default function Features() {
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-black mb-4">Our Services</h2>
+          <h2 className="text-4xl font-bold text-black mb-4">Youth Empowerment Program</h2>
           <p className="text-lg text-paragraph max-w-2xl mx-auto">
-            Comprehensive skill development and empowerment programs designed to transform youth into confident leaders
+            Comprehensive skill development programs designed to transform youth into confident professionals
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

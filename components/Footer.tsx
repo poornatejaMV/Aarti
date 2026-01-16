@@ -22,7 +22,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-gray-400 mb-6">
-              A Maratha Youth Empowerment Movement - Train, Transform, Triumph. Empowering youth through AI-driven skills, innovation, and entrepreneurship.
+              A Youth Empowerment Movement - Train, Transform, Triumph. Empowering youth through AI-driven skills, innovation, and entrepreneurship.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:bg-secondary hover:text-white transition">
@@ -64,7 +64,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/instructors" className="text-gray-400 hover:text-white transition">
-                  Instructors
+                  Educators
                 </Link>
               </li>
               <li>
@@ -136,7 +136,7 @@ export default function Footer() {
 
         <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
           <p>&copy; {new Date().getFullYear()} AARTI - Aausaheb Research and Training Institute. All rights reserved.</p>
-          <p className="mt-2 text-sm">A Maratha Youth Empowerment Movement - Train, Transform, Triumph</p>
+          <p className="mt-2 text-sm">A Youth Empowerment Movement - Train, Transform, Triumph</p>
         </div>
       </div>
     </footer>
