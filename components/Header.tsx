@@ -3,9 +3,22 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
+import { usePathname } from 'next/navigation';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  const handlePromotersClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (pathname === '/') {
+      e.preventDefault();
+      const element = document.getElementById('promoters');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+    // If not on homepage, let the link navigate normally
+  };
 
   return (
     <>
@@ -38,6 +51,13 @@ export default function Header() {
               </Link>
               <Link href="/about" className="text-black font-medium hover:text-primary transition">
                 About
+              </Link>
+              <Link 
+                href="/promoters" 
+                onClick={handlePromotersClick}
+                className="text-black font-medium hover:text-primary transition"
+              >
+                Promoters
               </Link>
               <Link href="/instructors" className="text-black font-medium hover:text-primary transition">
                 Educators
@@ -117,6 +137,13 @@ export default function Header() {
               </Link>
               <Link href="/about" className="block text-black hover:text-primary font-medium">
                 About
+              </Link>
+              <Link 
+                href="/promoters" 
+                onClick={handlePromotersClick}
+                className="block text-black hover:text-primary font-medium"
+              >
+                Promoters
               </Link>
               <Link href="/instructors" className="block text-black hover:text-primary font-medium">
                 Educators

@@ -109,54 +109,15 @@ export default function About() {
                 </div>
               </div>
 
-              {/* Quote Section */}
+              {/* Quote Section - temporarily commented as requested */}
+              {/*
               <div className="bg-gradient-to-r from-primary to-secondary text-white p-8 rounded-2xl text-center mb-16">
                 <h2 className="text-3xl font-bold mb-4">From Employment To Empowerment</h2>
                 <p className="text-xl italic">
                   &quot;Shivaji Maharaj didn&apos;t seek a job, he built an Empire.&quot;
                 </p>
               </div>
-
-              {/* Special Focus Areas */}
-              <div>
-                <h2 className="text-3xl font-bold text-black mb-6 text-center">
-                  Special Focus Areas
-                </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="bg-gray-50 p-6 rounded-lg">
-                    <h3 className="text-xl font-semibold text-black mb-2">
-                      Workforce Up Skilling
-                    </h3>
-                    <p className="text-paragraph">
-                      Continuous learning for professionals to stay relevant in the evolving job market.
-                    </p>
-                  </div>
-                  <div className="bg-gray-50 p-6 rounded-lg">
-                    <h3 className="text-xl font-semibold text-black mb-2">
-                      Women Empowerment Wing
-                    </h3>
-                    <p className="text-paragraph">
-                      Digital literacy & entrepreneurship programs specifically designed for women.
-                    </p>
-                  </div>
-                  <div className="bg-gray-50 p-6 rounded-lg">
-                    <h3 className="text-xl font-semibold text-black mb-2">
-                      Scholarships & Financial Aid
-                    </h3>
-                    <p className="text-paragraph">
-                      Support for talented youth to ensure equal opportunity for skill development.
-                    </p>
-                  </div>
-                  <div className="bg-gray-50 p-6 rounded-lg">
-                    <h3 className="text-xl font-semibold text-black mb-2">
-                      Cultural & Ethical Values
-                    </h3>
-                    <p className="text-paragraph">
-                      Ethical values & heritage preservation alongside modern skill development.
-                    </p>
-                  </div>
-                </div>
-              </div>
+              */}
             </div>
           </div>
         </section>
