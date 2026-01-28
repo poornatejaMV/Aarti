@@ -7,10 +7,14 @@ export default function About() {
     <>
       <Header />
       <main>
-        <section className="bg-gradient-to-br from-primary/10 via-white to-secondary/10 py-20">
-          <div className="container mx-auto px-4">
-            <h1 className="text-5xl font-bold text-black text-center mb-4">About AARTI</h1>
-            <p className="text-xl text-body text-center max-w-3xl mx-auto">
+        <section className="bg-primary py-20 relative overflow-hidden text-white">
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute top-0 left-0 w-72 h-72 bg-secondary rounded-full blur-3xl"></div>
+            <div className="absolute bottom-0 right-0 w-96 h-96 bg-secondary rounded-full blur-3xl"></div>
+          </div>
+          <div className="container mx-auto px-4 relative z-10">
+            <h1 className="text-5xl font-bold text-center mb-4">About AARTI</h1>
+            <p className="text-xl text-center max-w-3xl mx-auto text-[#fdebdc]">
               Aausaheb Research and Training Institute - A Youth Empowerment Movement
             </p>
           </div>
@@ -18,14 +22,11 @@ export default function About() {
 
         <section className="py-20">
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
+            <div className="max-w-6xl mx-auto">
               {/* Legacy Section */}
-              <div className="mb-16 relative overflow-hidden">
-                {/* Background with gradient and pattern */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/95 to-primary/90 rounded-3xl"></div>
-                <div className="absolute inset-0 opacity-10" style={{
-                  backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-                }}></div>
+              <div className="mb-16 relative overflow-hidden rounded-3xl">
+                {/* Background */}
+                <div className="absolute inset-0 bg-white rounded-3xl"></div>
                 
                 {/* Content */}
                 <div className="relative z-10 py-16 px-8 md:px-12">
@@ -35,18 +36,18 @@ export default function About() {
                       <div className="w-20 h-1 bg-white/30 mx-auto mb-2"></div>
                       <div className="w-12 h-1 bg-white/50 mx-auto"></div>
                     </div>
-                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">
+                    <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4 tracking-tight heading">
                       Aausaheb&apos;s Legacy
                     </h2>
                     <div className="w-24 h-1 bg-white/50 mx-auto mb-6"></div>
-                    <p className="text-xl md:text-2xl text-center text-white/95 mb-2 italic font-light leading-relaxed max-w-3xl mx-auto">
+                    <p className="text-xl md:text-2xl text-center mb-2 italic font-light leading-relaxed max-w-3xl mx-auto subtext text-body">
                       &quot;From Jijau&apos;s Sanskar to AI-driven Skills - Shaping Brave, Bright, and Self-Reliant Minds&quot;
                     </p>
                   </div>
 
                   {/* Cards Grid */}
                   <div className="space-y-5">
-                    <div className="group bg-white/95 backdrop-blur-sm p-6 md:p-8 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border-l-4 border-primary/30 hover:border-primary">
+                    <div className="group card bg-[#fdf8f3] backdrop-blur-sm p-6 md:p-8 rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_40px_rgba(0,0,0,0.10)] transition-all duration-300 hover:-translate-y-1 border-l-4 border-primary/30 hover:border-primary">
                       <div className="flex items-start gap-4">
                         <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-primary/20 to-primary/10 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                           <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -64,7 +65,7 @@ export default function About() {
                       </div>
                     </div>
 
-                    <div className="group bg-white/95 backdrop-blur-sm p-6 md:p-8 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border-l-4 border-primary/30 hover:border-primary">
+                    <div className="group card bg-[#fdf8f3] backdrop-blur-sm p-6 md:p-8 rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_40px_rgba(0,0,0,0.10)] transition-all duration-300 hover:-translate-y-1 border-l-4 border-primary/30 hover:border-primary">
                       <div className="flex items-start gap-4">
                         <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-primary/20 to-primary/10 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                           <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -82,7 +83,7 @@ export default function About() {
                       </div>
                     </div>
 
-                    <div className="group bg-white/95 backdrop-blur-sm p-6 md:p-8 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border-l-4 border-primary/30 hover:border-primary">
+                    <div className="group card bg-[#fdf8f3] backdrop-blur-sm p-6 md:p-8 rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_40px_rgba(0,0,0,0.10)] transition-all duration-300 hover:-translate-y-1 border-l-4 border-primary/30 hover:border-primary">
                       <div className="flex items-start gap-4">
                         <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-primary/20 to-primary/10 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                           <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -100,7 +101,7 @@ export default function About() {
                       </div>
                     </div>
 
-                    <div className="group bg-white/95 backdrop-blur-sm p-6 md:p-8 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border-l-4 border-primary/30 hover:border-primary">
+                    <div className="group card bg-[#fdf8f3] backdrop-blur-sm p-6 md:p-8 rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_40px_rgba(0,0,0,0.10)] transition-all duration-300 hover:-translate-y-1 border-l-4 border-primary/30 hover:border-primary">
                       <div className="flex items-start gap-4">
                         <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-primary/20 to-primary/10 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                           <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -118,7 +119,7 @@ export default function About() {
                       </div>
                     </div>
 
-                    <div className="group bg-white/95 backdrop-blur-sm p-6 md:p-8 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border-l-4 border-primary/30 hover:border-primary">
+                    <div className="group card bg-[#fdf8f3] backdrop-blur-sm p-6 md:p-8 rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_40px_rgba(0,0,0,0.10)] transition-all duration-300 hover:-translate-y-1 border-l-4 border-primary/30 hover:border-primary">
                       <div className="flex items-start gap-4">
                         <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-primary/20 to-primary/10 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                           <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">

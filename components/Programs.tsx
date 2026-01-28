@@ -10,11 +10,17 @@ export default function Programs() {
     { id: 4, image: '/images/programs/program-4.png', alt: 'Program 4' },
   ];
 
+  const marathaHostelWorks = [
+    { id: 1, image: '/images/works/1.jpg', alt: 'Towards Maratha Hostel - Work 1' },
+    { id: 2, image: '/images/works/2.jpg', alt: 'Towards Maratha Hostel - Work 2' },
+    { id: 3, image: '/images/works/3.jpg', alt: 'Towards Maratha Hostel - Work 3' },
+  ];
+
   return (
-    <section id="programs" className="py-20 relative overflow-hidden programs-section">
-      {/* Background Image */}
+    <section id="programs" className="py-20 relative overflow-hidden bg-[#f5f7fa] programs-section">
+      {/* Background Image + Themed Overlay */}
       <div 
-        className="absolute inset-0 z-0"
+        className="absolute inset-0 z-0 bg-[#f5f7fa]"
         style={{
           backgroundImage: 'url(/images/donations-bg.png)',
           backgroundSize: 'cover',
@@ -22,42 +28,74 @@ export default function Programs() {
           backgroundRepeat: 'no-repeat',
         }}
       >
-        {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/75 to-black/85"></div>
-        {/* Top fade to blend with previous white section */}
-        <div className="pointer-events-none absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-white via-white/30 to-transparent"></div>
+        {/* Light premium overlay */}
+        <div className="absolute inset-0 bg-[#f5f7fa]/90"></div>
+        {/* Top fade to blend with previous light section */}
+        <div className="pointer-events-none absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-white via-white/20 to-transparent"></div>
       </div>
 
       {/* Decorative Elements */}
-      <div className="absolute right-0 top-0 bottom-0 w-[46.56vw] max-w-[886px] bg-black/85 rounded-l-[999px] z-[-1] hidden lg:block programs-decorative"></div>
+      <div className="absolute right-0 top-0 bottom-0 w-[46.56vw] max-w-[886px] bg-[#f5f7fa]/90 rounded-l-[999px] z-[-1] hidden lg:block programs-decorative"></div>
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Unified Section Header */}
         <div className="text-center mb-12 max-w-[660px] mx-auto lg:text-left lg:mx-0">
-          <span className="text-white/80 font-semibold text-sm uppercase tracking-wide block mb-2">
-            Our Programs
+          <span className="text-secondary font-semibold text-sm uppercase tracking-wide block mb-2">
+            Our Social Initiatives
           </span>
           <div className="inline-block mb-4 lg:mb-4">
-            <div className="w-16 h-1 bg-white/30 mx-auto mb-2 lg:mx-0"></div>
-            <div className="w-10 h-1 bg-white/50 mx-auto lg:mx-0"></div>
+            <div className="w-16 h-1 bg-secondary/30 mx-auto mb-2 lg:mx-0"></div>
+            <div className="w-10 h-1 bg-secondary/60 mx-auto lg:mx-0"></div>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mt-2">
+          <h2 className="text-3xl md:text-4xl font-bold text-black mt-2">
             Towards Social Development
           </h2>
         </div>
 
         {/* Programs Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {programs.map((program) => (
             <div
               key={program.id}
-              className="group bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 program-card"
+              className="group bg-white rounded-2xl p-6 border border-gray-100 shadow-[0_10px_30px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_40px_rgba(0,0,0,0.10)] transition-all duration-300 hover:-translate-y-1 program-card"
             >
               <div className="relative mb-6 program-image-container overflow-hidden rounded-xl">
                 <div className="relative w-full" style={{ aspectRatio: '282/188' }}>
                   <Image
                     src={program.image}
                     alt={program.alt}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  {/* Hover Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Second Section Header */}
+        <div className="text-center mt-16 mb-12 max-w-[660px] mx-auto lg:text-left lg:mx-0">
+          <h2 className="text-3xl md:text-4xl font-bold text-black mt-2">
+            Towards Maratha Hostel
+          </h2>
+        </div>
+
+        {/* Maratha Hostel Works Grid (larger cards, last centered) */}
+        <div className="flex flex-wrap justify-center gap-8">
+          {marathaHostelWorks.map((work, index) => (
+            <div
+              key={work.id}
+              className={`group bg-white rounded-2xl p-6 border border-gray-100 shadow-[0_10px_30px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_40px_rgba(0,0,0,0.10)] transition-all duration-300 hover:-translate-y-1 program-card w-full md:w-[48%] lg:w-[48%] ${
+                index === marathaHostelWorks.length - 1 ? 'md:w-[60%] lg:w-[60%] md:mx-auto' : ''
+              }`}
+            >
+              <div className="relative mb-6 program-image-container overflow-hidden rounded-xl">
+                <div className="relative w-full" style={{ aspectRatio: '282/188' }}>
+                  <Image
+                    src={work.image}
+                    alt={work.alt}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />

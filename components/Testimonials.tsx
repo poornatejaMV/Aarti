@@ -1,5 +1,3 @@
-import Image from 'next/image';
-
 const testimonials = [
   {
     name: 'Priya Sharma',
@@ -59,14 +57,7 @@ export default function Testimonials() {
               
               <div className="relative z-10">
                 <div className="flex items-start mb-6">
-                  <div className="relative w-14 h-14 rounded-full overflow-hidden mr-4 flex-shrink-0 border-2 border-gray-100">
-                    <Image
-                      src={testimonial.image}
-                      alt={testimonial.name}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
+                  <div className="relative w-14 h-14 rounded-full overflow-hidden mr-4 flex-shrink-0 border-2 border-gray-100 bg-gray-100" />
                   <div className="flex-1">
                     <h4 className="font-bold text-black mb-1">{testimonial.name}</h4>
                     <p className="text-sm text-paragraph mb-1">{testimonial.role}</p>

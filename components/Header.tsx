@@ -3,21 +3,27 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
+  const router = useRouter();
 
   const handlePromotersClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+
+    // If already on the homepage, smooth-scroll to the promoters section
     if (pathname === '/') {
-      e.preventDefault();
       const element = document.getElementById('promoters');
       if (element) {
         element.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
+      return;
     }
-    // If not on homepage, let the link navigate normally
+
+    // If on another page, navigate to the homepage with hash
+    router.push('/#promoters');
   };
 
   return (
@@ -27,11 +33,11 @@ export default function Header() {
           <div className="flex items-center justify-between">
             <Link href="/" className="flex items-center gap-3">
               <Image
-                src="/images/aarti-logo.png"
+                src="/images/aarti_logo.jpeg"
                 alt="AARTI Logo"
-                width={50}
-                height={55}
-                className="h-12 w-auto"
+                width={60}
+                height={66}
+                className="h-14 w-auto"
                 priority
               />
               <div className="hidden sm:block">
@@ -43,6 +49,7 @@ export default function Header() {
 
             {/* Desktop Menu */}
             <div className="hidden lg:flex items-center space-x-6">
+              {/* Home */}
               <Link 
                 href="/" 
                 className={`font-medium transition relative ${
@@ -56,19 +63,8 @@ export default function Header() {
                   <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary"></span>
                 )}
               </Link>
-              <Link 
-                href="/courses" 
-                className={`font-medium transition relative ${
-                  pathname === '/courses' 
-                    ? 'text-primary' 
-                    : 'text-black hover:text-primary'
-                }`}
-              >
-                Courses
-                {pathname === '/courses' && (
-                  <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary"></span>
-                )}
-              </Link>
+
+              {/* About Us */}
               <Link 
                 href="/about" 
                 className={`font-medium transition relative ${
@@ -77,25 +73,28 @@ export default function Header() {
                     : 'text-black hover:text-primary'
                 }`}
               >
-                About
+                About Us
                 {pathname === '/about' && (
                   <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary"></span>
                 )}
               </Link>
+
+              {/* Courses */}
               <Link 
-                href="/promoters" 
-                onClick={handlePromotersClick}
+                href="/courses" 
                 className={`font-medium transition relative ${
-                  pathname === '/promoters' 
+                  pathname === '/courses' 
                     ? 'text-primary' 
                     : 'text-black hover:text-primary'
                 }`}
               >
-                Promoters
-                {pathname === '/promoters' && (
+                Our Courses
+                {pathname === '/courses' && (
                   <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary"></span>
                 )}
               </Link>
+
+              {/* Educators */}
               <Link 
                 href="/instructors" 
                 className={`font-medium transition relative ${
@@ -109,6 +108,39 @@ export default function Header() {
                   <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary"></span>
                 )}
               </Link>
+
+              {/* Promoters */}
+              <Link 
+                href="/#promoters" 
+                onClick={handlePromotersClick}
+                className={`font-medium transition relative ${
+                  pathname === '/promoters' 
+                    ? 'text-primary' 
+                    : 'text-black hover:text-primary'
+                }`}
+              >
+                Promoters
+                {pathname === '/promoters' && (
+                  <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary"></span>
+                )}
+              </Link>
+
+              {/* Gallery */}
+              <Link 
+                href="/gallery" 
+                className={`font-medium transition relative ${
+                  pathname === '/gallery' 
+                    ? 'text-primary' 
+                    : 'text-black hover:text-primary'
+                }`}
+              >
+                Gallery
+                {pathname === '/gallery' && (
+                  <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary"></span>
+                )}
+              </Link>
+
+              {/* News & Blogs */}
               <Link 
                 href="/blog" 
                 className={`font-medium transition relative ${
@@ -117,11 +149,13 @@ export default function Header() {
                     : 'text-black hover:text-primary'
                 }`}
               >
-                Blog
+                News &amp; Blogs
                 {(pathname === '/blog' || pathname?.startsWith('/blog/')) && (
                   <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary"></span>
                 )}
               </Link>
+
+              {/* Contact Us */}
               <Link 
                 href="/contact" 
                 className={`font-medium transition relative ${
@@ -196,6 +230,7 @@ export default function Header() {
           {/* Mobile Menu */}
           {isMenuOpen && (
             <div className="lg:hidden mt-4 space-y-3 pb-4 bg-white rounded-lg shadow-lg p-4">
+              {/* Home */}
               <Link 
                 href="/" 
                 className={`block font-medium transition ${
@@ -204,31 +239,28 @@ export default function Header() {
               >
                 Home
               </Link>
-              <Link 
-                href="/courses" 
-                className={`block font-medium transition ${
-                  pathname === '/courses' ? 'text-primary' : 'text-black hover:text-primary'
-                }`}
-              >
-                Courses
-              </Link>
+
+              {/* About Us */}
               <Link 
                 href="/about" 
                 className={`block font-medium transition ${
                   pathname === '/about' ? 'text-primary' : 'text-black hover:text-primary'
                 }`}
               >
-                About
+                About Us
               </Link>
+
+              {/* Courses */}
               <Link 
-                href="/promoters" 
-                onClick={handlePromotersClick}
+                href="/courses" 
                 className={`block font-medium transition ${
-                  pathname === '/promoters' ? 'text-primary' : 'text-black hover:text-primary'
+                  pathname === '/courses' ? 'text-primary' : 'text-black hover:text-primary'
                 }`}
               >
-                Promoters
+                Our Courses
               </Link>
+
+              {/* Educators */}
               <Link 
                 href="/instructors" 
                 className={`block font-medium transition ${
@@ -237,14 +269,39 @@ export default function Header() {
               >
                 Educators
               </Link>
+
+              {/* Promoters */}
+              <Link 
+                href="/#promoters" 
+                onClick={handlePromotersClick}
+                className={`block font-medium transition ${
+                  pathname === '/promoters' ? 'text-primary' : 'text-black hover:text-primary'
+                }`}
+              >
+                Promoters
+              </Link>
+
+              {/* Gallery */}
+              <Link 
+                href="/gallery" 
+                className={`block font-medium transition ${
+                  pathname === '/gallery' ? 'text-primary' : 'text-black hover:text-primary'
+                }`}
+              >
+                Gallery
+              </Link>
+
+              {/* News & Blogs */}
               <Link 
                 href="/blog" 
                 className={`block font-medium transition ${
                   pathname === '/blog' || pathname?.startsWith('/blog/') ? 'text-primary' : 'text-black hover:text-primary'
                 }`}
               >
-                Blog
+                News &amp; Blogs
               </Link>
+
+              {/* Contact Us */}
               <Link 
                 href="/contact" 
                 className={`block font-medium transition ${

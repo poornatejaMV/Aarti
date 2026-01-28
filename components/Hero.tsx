@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export default function Hero() {
   return (
-    <section className="relative bg-white py-16 md:py-20 overflow-hidden">
+    <section className="relative pt-4 md:pt-6 pb-[90px] overflow-hidden">
       {/* Decorative Elements */}
       <div className="absolute top-20 left-0 w-64 h-64 bg-gradient-to-r from-secondary/20 to-primary/20 rounded-full blur-3xl -z-10" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-l from-pink-400/30 to-secondary/30 rounded-full blur-3xl -z-10" />
@@ -12,13 +12,13 @@ export default function Hero() {
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
           {/* Left Content */}
           <div className="lg:w-1/2 text-center lg:text-left">
-            <div className="mb-4">
+            <div className="mb-2 inline-block">
               <Image
                 src="/images/fun.png"
                 alt="Decorative"
                 width={60}
                 height={30}
-                className="mx-auto lg:mx-0"
+                className="mx-auto lg:mx-0 w-10 h-auto"
               />
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-6 leading-tight">
@@ -96,17 +96,20 @@ export default function Hero() {
           </div>
 
           {/* Right Content - Hero Image */}
-          <div className="lg:w-1/2 relative">
+          <div className="lg:w-1/2 relative w-full">
             {/* Main Image */}
-            <div className="relative">
-              <Image
-                src="/images/smiling-student-with-laptop.jpg"
-                alt="Student"
-                width={494}
-                height={730}
-                className="relative z-0 mx-auto"
-                priority
-              />
+            <div className="relative mx-auto w-full max-w-[640px] lg:max-w-none">
+              <div className="relative w-full h-[320px] sm:h-[420px] md:h-[520px] lg:h-[620px]">
+                <Image
+                  src="/images/image.jpeg"
+                  alt="AARTI Building"
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 90vw, 45vw"
+                  className="object-cover object-center rounded-3xl shadow-[0_18px_55px_rgba(0,0,0,0.14)]"
+                />
+              </div>
+
               {/* Decorative shapes */}
               <Image
                 src="/images/banner/shape1.png"

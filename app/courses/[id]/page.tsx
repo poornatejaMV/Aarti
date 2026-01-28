@@ -1,3 +1,6 @@
+'use client';
+
+import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Link from "next/link";
@@ -8,6 +11,17 @@ interface CourseDetailPageProps {
     id: string;
   };
 }
+
+const professions = [
+  { name: 'Lawyers', emoji: '👨‍⚖️' },
+  { name: 'Doctors', emoji: '👨‍⚕️' },
+  { name: 'Teachers', emoji: '👨‍🏫' },
+  { name: 'Engineers', emoji: '👨‍💼' },
+  { name: 'Business Professionals', emoji: '💼' },
+  { name: 'Traders', emoji: '🛒' },
+  { name: 'Entrepreneurs', emoji: '👩‍💼' },
+  { name: 'Students', emoji: '🎓' },
+];
 
 // Course data structure
 const coursesData: Record<string, any> = {
@@ -425,6 +439,14 @@ export default function CourseDetailPage({ params }: CourseDetailPageProps) {
   const learningOutcomes = courseData.learningOutcomes || [];
   const targetAudience = courseData.targetAudience || null;
 
+  const [selectedProfession, setSelectedProfession] = useState<string | null>(null);
+
+  const handleProfessionClick = (profession: string) => {
+    setSelectedProfession((current) => (current === profession ? null : profession));
+    // In future, curriculum can be adjusted per profession.
+    // For now, curriculum remains the same for all professions.
+  };
+
   return (
     <>
       <Header />
@@ -478,6 +500,37 @@ export default function CourseDetailPage({ params }: CourseDetailPageProps) {
                       </ul>
                     </div>
                   )}
+
+                  {/* Profession Filter - same pattern as All Courses page */}
+                  <div className="mb-6 bg-white rounded-lg shadow-sm p-6 border border-gray-100">
+                    <div className="text-center mb-4">
+                      <h3 className="text-xl font-semibold text-black mb-2">Filter by Profession</h3>
+                      <p className="text-sm text-paragraph">
+                        Choose your profession to personalise how you view this course. (Curriculum is currently common
+                        for all professions.)
+                      </p>
+                    </div>
+                    <div className="flex flex-wrap justify-center gap-3">
+                      {professions.map((profession) => (
+                        <button
+                          key={profession.name}
+                          onClick={() => handleProfessionClick(profession.name)}
+                          className={`px-5 py-2 rounded-lg font-medium transition shadow-sm ${
+                            selectedProfession === profession.name
+                              ? 'bg-gradient-to-r from-primary to-secondary text-white border-2 border-primary'
+                              : 'bg-gradient-to-r from-primary/10 to-secondary/10 text-primary border border-primary/30 hover:from-primary/20 hover:to-secondary/20'
+                          }`}
+                        >
+                          {profession.emoji} {profession.name}
+                        </button>
+                      ))}
+                    </div>
+                    {selectedProfession && (
+                      <p className="mt-4 text-center text-sm text-body">
+                        Viewing curriculum for: <span className="font-semibold text-black">{selectedProfession}</span>
+                      </p>
+                    )}
+                  </div>
 
                   <h2 className="text-2xl font-bold text-black mb-4">Final Outcomes</h2>
                   <p className="text-body mb-4">By the end of this course, participants will:</p>

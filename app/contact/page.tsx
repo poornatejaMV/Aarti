@@ -31,10 +31,14 @@ export default function ContactPage() {
     <>
       <Header />
       <main>
-        <section className="bg-gradient-to-br from-primary/10 via-white to-secondary/10 py-20">
-          <div className="container mx-auto px-4">
-            <h1 className="text-5xl font-bold text-black text-center mb-4">Contact Us</h1>
-            <p className="text-xl text-body text-center max-w-3xl mx-auto">
+        <section className="bg-primary py-20 relative overflow-hidden text-white">
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute top-0 left-0 w-72 h-72 bg-secondary rounded-full blur-3xl"></div>
+            <div className="absolute bottom-0 right-0 w-96 h-96 bg-secondary rounded-full blur-3xl"></div>
+          </div>
+          <div className="container mx-auto px-4 relative z-10">
+            <h1 className="text-5xl font-bold text-center mb-4">Contact Us</h1>
+            <p className="text-xl text-center max-w-3xl mx-auto text-[#fdebdc]">
               Have questions? We&apos;d love to hear from you. Send us a message and we&apos;ll respond as soon as possible.
             </p>
           </div>
@@ -59,7 +63,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-black mb-1">Email</h3>
-                      <p className="text-body">support@aluno.com</p>
+                      <p className="text-body">info@aarti.com</p>
                     </div>
                   </div>
 
@@ -71,7 +75,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-black mb-1">Phone</h3>
-                      <p className="text-body">+1 (555) 123-4567</p>
+                      <p className="text-body">9874563219</p>
                     </div>
                   </div>
 
@@ -84,7 +88,10 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-black mb-1">Address</h3>
-                      <p className="text-body">123 Education Street<br />Learning City, LC 12345</p>
+                      <p className="text-body">
+                        Aausaheb Research &amp; Training Institute<br />
+                        Ch Sambhajinagar
+                      </p>
                     </div>
                   </div>
                 </div>

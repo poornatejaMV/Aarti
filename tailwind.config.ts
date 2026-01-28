@@ -9,13 +9,14 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: "#1C43FE",
-        secondary: "#FE3F10",
-        body: "#63667D",
-        dark: "#000000",
+        // Brownish–orange brand palette
+        primary: "#B45309",   // deep brown-orange
+        secondary: "#F97316", // bright orange accent
+        body: "#5C5247",
+        dark: "#1F1309",
         white: "#ffffff",
-        black: "#131F34",
-        paragraph: "#4B5563",
+        black: "#1A1510",
+        paragraph: "#4A4036",
       },
       fontFamily: {
         main: ["Manrope", "sans-serif"],

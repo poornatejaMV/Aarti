@@ -7,13 +7,13 @@
 :root {
   --fontSize: 16px;
   --transition: 0.5s;
-  --bodyColor: #63667D;
-  --darkColor: #000000;
+  --bodyColor: #5C5247;
+  --darkColor: #1F1309;
   --whiteColor: #ffffff;
-  --blackColor: #131F34;
-  --primaryColor: #1C43FE;
-  --secondaryColor: #FE3F10;
-  --paragraphColor: #4B5563;
+  --blackColor: #1A1510;
+  --primaryColor: #B45309;
+  --secondaryColor: #F97316;
+  --paragraphColor: #4A4036;
   --mainFontFamily: "Manrope", sans-serif;
   --paragraphFontFamily: "Inter", sans-serif;
 }
@@ -36,6 +36,7 @@ body {
   font-family: var(--mainFontFamily);
   font-size: var(--fontSize);
   color: var(--bodyColor);
+  background-color: #f5f7fa;
   line-height: 1.6;
 }
 

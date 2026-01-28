@@ -6,7 +6,6 @@ import Courses from "@/components/Courses";
 import Team from "@/components/Team";
 import Programs from "@/components/Programs";
 import Testimonials from "@/components/Testimonials";
-import CTA from "@/components/CTA";
 
 export default function Home() {
   return (
@@ -19,7 +18,6 @@ export default function Home() {
         <Team />
         <Programs />
         <Testimonials />
-        <CTA />
       </main>
       <Footer />
     </>

@@ -1,12 +1,11 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Link from "next/link";
-import Image from "next/image";
 
 const instructors = [
   {
     id: 1,
-    name: 'John Doe',
+    name: 'Rahul Kulkarni',
     role: 'Senior Web Developer',
     image: '/images/team/team1.jpg',
     bio: '10+ years of experience in web development. Former lead developer at Google.',
@@ -16,7 +15,7 @@ const instructors = [
   },
   {
     id: 2,
-    name: 'Jane Smith',
+    name: 'Priya Deshmukh',
     role: 'Data Scientist',
     image: '/images/team/team2.jpg',
     bio: 'PhD in Computer Science. Expert in machine learning and data analysis.',
@@ -26,7 +25,7 @@ const instructors = [
   },
   {
     id: 3,
-    name: 'Mike Johnson',
+    name: 'Sanjay Patil',
     role: 'UI/UX Designer',
     image: '/images/team/team3.jpg',
     bio: 'Award-winning designer with 15+ years of experience. Worked with top tech companies.',
@@ -36,7 +35,7 @@ const instructors = [
   },
   {
     id: 4,
-    name: 'Sarah Williams',
+    name: 'Aarti Joshi',
     role: 'Mobile App Developer',
     image: '/images/team/team4.jpg',
     bio: 'iOS and Android expert. Created multiple successful apps with millions of downloads.',
@@ -46,7 +45,7 @@ const instructors = [
   },
   {
     id: 5,
-    name: 'David Brown',
+    name: 'Vikram Shah',
     role: 'Digital Marketing Expert',
     image: '/images/team/team5.jpg',
     bio: 'Helped hundreds of businesses grow their online presence. SEO and social media specialist.',
@@ -56,7 +55,7 @@ const instructors = [
   },
   {
     id: 6,
-    name: 'Emily Davis',
+    name: 'Neha Kulkarni',
     role: 'Python Developer',
     image: '/images/team/team6.jpg',
     bio: 'Python enthusiast and educator. Author of multiple programming books.',
@@ -94,13 +93,15 @@ export default function InstructorsPage() {
                   key={instructor.id}
                   className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition group"
                 >
-                  <div className="relative h-72 overflow-hidden">
-                    <Image
-                      src={instructor.image}
-                      alt={instructor.name}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
+                  <div className="relative h-72 overflow-hidden bg-gray-100 flex items-center justify-center">
+                    <svg
+                      className="w-20 h-20 text-gray-300"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-3.33 0-6 2.24-6 5v1h12v-1c0-2.76-2.67-5-6-5z" />
+                    </svg>
                   </div>
                   <div className="p-6">
                     <h3 className="text-xl font-bold text-black mb-1">{instructor.name}</h3>

@@ -8,7 +8,7 @@ const blogPosts = [
     id: 1,
     title: '10 Tips for Learning Web Development Faster',
     excerpt: 'Discover proven strategies to accelerate your web development learning journey...',
-    author: 'John Doe',
+    author: 'Rahul Joshi',
     date: 'March 15, 2024',
     image: '/images/blog/blog1.jpg',
     category: 'Web Development',
@@ -17,7 +17,7 @@ const blogPosts = [
     id: 2,
     title: 'The Future of Data Science in 2024',
     excerpt: 'Explore the latest trends and technologies shaping the data science landscape...',
-    author: 'Jane Smith',
+    author: 'Priya Sharma',
     date: 'March 10, 2024',
     image: '/images/blog/blog2.jpg',
     category: 'Data Science',
@@ -26,7 +26,7 @@ const blogPosts = [
     id: 3,
     title: 'UI/UX Design Principles Every Developer Should Know',
     excerpt: 'Learn essential design principles that will make your applications more user-friendly...',
-    author: 'Mike Johnson',
+    author: 'Sanjay Patil',
     date: 'March 5, 2024',
     image: '/images/blog/blog3.jpg',
     category: 'Design',
@@ -35,7 +35,7 @@ const blogPosts = [
     id: 4,
     title: 'Getting Started with Mobile App Development',
     excerpt: 'A comprehensive guide to starting your mobile app development journey...',
-    author: 'Sarah Williams',
+    author: 'Aditi Kulkarni',
     date: 'February 28, 2024',
     image: '/images/blog/blog4.jpg',
     category: 'Mobile Development',
@@ -44,7 +44,7 @@ const blogPosts = [
     id: 5,
     title: 'Digital Marketing Strategies for 2024',
     excerpt: 'Stay ahead with the latest digital marketing trends and strategies...',
-    author: 'David Brown',
+    author: 'Vikram Shah',
     date: 'February 20, 2024',
     image: '/images/blog/blog5.jpg',
     category: 'Marketing',
@@ -53,7 +53,7 @@ const blogPosts = [
     id: 6,
     title: 'Python for Beginners: Your First Steps',
     excerpt: 'Start your programming journey with Python, one of the most beginner-friendly languages...',
-    author: 'Emily Davis',
+    author: 'Neha Deshmukh',
     date: 'February 15, 2024',
     image: '/images/blog/blog6.jpg',
     category: 'Programming',
@@ -71,11 +71,11 @@ export default function BlogPage() {
             <div className="absolute bottom-10 right-10 w-48 h-48 border-4 border-white rounded-full" />
           </div>
           <div className="container mx-auto px-4 relative z-10">
-            <h1 className="text-5xl font-bold text-white text-center mb-4">Blog</h1>
+            <h1 className="text-5xl font-bold text-white text-center mb-4">News &amp; Blogs</h1>
             <div className="flex items-center justify-center gap-2 text-white/80">
               <Link href="/" className="hover:text-white">Home</Link>
               <span>›</span>
-              <span>Blog</span>
+              <span>News &amp; Blogs</span>
             </div>
           </div>
         </section>
@@ -84,8 +84,8 @@ export default function BlogPage() {
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {blogPosts.map((post) => (
-                <Link key={post.id} href={`/blog/${post.id}`}>
-                  <article className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition group">
+                <Link key={post.id} href={`/blog/${post.id}`} className="block h-full">
+                  <article className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition group h-full flex flex-col">
                     <div className="relative h-56 overflow-hidden">
                       <Image
                         src={post.image}
@@ -97,12 +97,12 @@ export default function BlogPage() {
                         {post.category}
                       </div>
                     </div>
-                    <div className="p-6">
+                    <div className="p-6 flex flex-col flex-1">
                       <h2 className="text-xl font-bold text-black mb-3 line-clamp-2 group-hover:text-primary transition">
                         {post.title}
                       </h2>
-                      <p className="text-paragraph mb-4 line-clamp-2">{post.excerpt}</p>
-                      <div className="flex items-center justify-between text-sm text-paragraph pt-4 border-t">
+                      <p className="text-paragraph mb-4 line-clamp-2 flex-1">{post.excerpt}</p>
+                      <div className="flex items-center justify-between text-sm text-paragraph pt-4 border-t mt-auto">
                         <span>{post.author}</span>
                         <span>{post.date}</span>
                       </div>
