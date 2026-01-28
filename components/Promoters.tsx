@@ -4,9 +4,6 @@ import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper/modules';
 
-import 'swiper/css';
-import 'swiper/css/navigation';
-
 export default function Promoters() {
   const teamMembers = [
     {
@@ -133,14 +130,13 @@ export default function Promoters() {
             <SwiperSlide key={member.id}>
               <div className="bg-gray-100 overflow-hidden text-center transition-all duration-[400ms] hover:bg-primary group team-member-card">
                 <div className="relative z-[1] team-member-img">
-                  <div className="relative w-full" style={{ aspectRatio: '308/320' }}>
+                  <div className="relative w-full overflow-hidden bg-white" style={{ aspectRatio: '308/360' }}>
                     <Image
                       src={member.image}
                       alt={member.name}
-                      width={300}
-                      height={300}
-                      className="w-full h-full"
-                      style={{ objectFit: 'contain', width: '100%', height: '100%' }}
+                      fill
+                      sizes="(max-width: 576px) 90vw, (max-width: 992px) 45vw, 25vw"
+                      className="object-contain p-2"
                     />
                     {/* Gradient Overlay */}
                     <div className="team-member-overlay"></div>

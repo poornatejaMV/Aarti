@@ -4,9 +4,6 @@ import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper/modules';
 
-import 'swiper/css';
-import 'swiper/css/navigation';
-
 export default function Team() {
   const teamMembers = [
     {
@@ -50,46 +47,55 @@ export default function Team() {
   return (
     <section id="promoters" className="py-20 bg-white">
       <div className="container mx-auto px-4">
-        {/* Heading */}
+        {/* Unified Section Header */}
         <div className="text-center mb-12">
-          <span className="text-primary font-semibold text-sm uppercase tracking-wide">Our Promoters</span>
-          <h2 className="text-4xl md:text-5xl font-bold text-black mt-2 mb-4">
+          <span className="text-secondary font-semibold text-sm uppercase tracking-wide block mb-2">
+            Our Leadership
+          </span>
+          <div className="inline-block mb-4">
+            <div className="w-16 h-1 bg-secondary/30 mx-auto mb-2"></div>
+            <div className="w-10 h-1 bg-secondary/60 mx-auto"></div>
+          </div>
+          <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
             Committed to Empowering Youth and Social Service
           </h2>
           <p className="text-lg text-paragraph max-w-3xl mx-auto">
-            Meet our dedicated promoters committed to empowering youth and serving the community.
+            Meet our dedicated community leadership committed to empowering youth and serving the community.
           </p>
         </div>
 
         {/* Team Slider */}
-        <Swiper
-          modules={[Navigation, Autoplay]}
-          className="team-slider"
-          slidesPerView={3}
-          spaceBetween={30}
-          loop
-          navigation
-          speed={900}
-          autoplay={{ delay: 1500, disableOnInteraction: false }}
-          breakpoints={{
-            0: { slidesPerView: 1, spaceBetween: 16 },
-            576: { slidesPerView: 2, spaceBetween: 20 },
-            992: { slidesPerView: 3, spaceBetween: 26 },
-            1400: { slidesPerView: 4, spaceBetween: 32 },
-          }}
-        >
+        <div className="relative px-12 md:px-16">
+          <Swiper
+            modules={[Navigation, Autoplay]}
+            className="team-slider"
+            slidesPerView={3}
+            spaceBetween={30}
+            loop
+            navigation={true}
+            speed={900}
+            autoplay={{ delay: 4000, disableOnInteraction: false }}
+            breakpoints={{
+              0: { slidesPerView: 1, spaceBetween: 16 },
+              576: { slidesPerView: 2, spaceBetween: 20 },
+              992: { slidesPerView: 3, spaceBetween: 26 },
+              1400: { slidesPerView: 4, spaceBetween: 32 },
+            }}
+          >
           {teamMembers.map((member) => (
             <SwiperSlide key={member.id}>
-              <div className="bg-gray-100 overflow-hidden text-center transition-all duration-[400ms] hover:bg-primary group team-member-card">
+              <div className="bg-gray-100 overflow-hidden text-center transition-all duration-[400ms] hover:bg-primary group team-member-card rounded-2xl">
                 <div className="relative z-[1] team-member-img">
-                  <div className="relative w-full" style={{ aspectRatio: '308/320' }}>
+                  <div
+                    className="relative w-full overflow-hidden bg-white"
+                    style={{ aspectRatio: '308/360' }}
+                  >
                     <Image
                       src={member.image}
                       alt={member.name}
-                      width={300}
-                      height={300}
-                      className="w-full h-full"
-                      style={{ objectFit: 'contain', width: '100%', height: '100%' }}
+                      fill
+                      sizes="(max-width: 576px) 90vw, (max-width: 992px) 45vw, 25vw"
+                      className="object-contain p-2"
                     />
                     {/* Gradient Overlay */}
                     <div className="team-member-overlay"></div>
@@ -144,6 +150,7 @@ export default function Team() {
             </SwiperSlide>
           ))}
         </Swiper>
+        </div>
 
         {/* Custom Styles to Match Reference */}
         <style jsx global>{`
@@ -232,23 +239,25 @@ export default function Team() {
             color: white;
           }
           
-          .team-slider .swiper-button-next,
-          .team-slider .swiper-button-prev {
-            color: var(--primary-color, #2563eb);
-            background: white;
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+          .team-slider {
+            padding: 0 60px !important;
           }
-          .team-slider .swiper-button-next:after,
-          .team-slider .swiper-button-prev:after {
-            font-size: 20px;
+          
+          @media (max-width: 768px) {
+            .team-slider {
+              padding: 0 50px !important;
+            }
           }
-          .team-slider .swiper-button-next:hover,
-          .team-slider .swiper-button-prev:hover {
-            background: var(--primary-color, #2563eb);
-            color: white;
+          
+          .team-slider-button-next,
+          .team-slider-button-prev {
+            color: #1C43FE;
+          }
+          
+          .team-slider-button-next.swiper-button-disabled,
+          .team-slider-button-prev.swiper-button-disabled {
+            opacity: 0.35;
+            cursor: not-allowed;
           }
         `}</style>
       </div>

@@ -42,38 +42,102 @@ export default function Header() {
             </Link>
 
             {/* Desktop Menu */}
-            <div className="hidden lg:flex items-center space-x-8">
-              <Link href="/" className="text-black font-medium hover:text-primary transition">
+            <div className="hidden lg:flex items-center space-x-6">
+              <Link 
+                href="/" 
+                className={`font-medium transition relative ${
+                  pathname === '/' 
+                    ? 'text-primary' 
+                    : 'text-black hover:text-primary'
+                }`}
+              >
                 Home
+                {pathname === '/' && (
+                  <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary"></span>
+                )}
               </Link>
-              <Link href="/courses" className="text-black font-medium hover:text-primary transition">
+              <Link 
+                href="/courses" 
+                className={`font-medium transition relative ${
+                  pathname === '/courses' 
+                    ? 'text-primary' 
+                    : 'text-black hover:text-primary'
+                }`}
+              >
                 Courses
+                {pathname === '/courses' && (
+                  <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary"></span>
+                )}
               </Link>
-              <Link href="/about" className="text-black font-medium hover:text-primary transition">
+              <Link 
+                href="/about" 
+                className={`font-medium transition relative ${
+                  pathname === '/about' 
+                    ? 'text-primary' 
+                    : 'text-black hover:text-primary'
+                }`}
+              >
                 About
+                {pathname === '/about' && (
+                  <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary"></span>
+                )}
               </Link>
               <Link 
                 href="/promoters" 
                 onClick={handlePromotersClick}
-                className="text-black font-medium hover:text-primary transition"
+                className={`font-medium transition relative ${
+                  pathname === '/promoters' 
+                    ? 'text-primary' 
+                    : 'text-black hover:text-primary'
+                }`}
               >
                 Promoters
+                {pathname === '/promoters' && (
+                  <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary"></span>
+                )}
               </Link>
-              <Link href="/instructors" className="text-black font-medium hover:text-primary transition">
+              <Link 
+                href="/instructors" 
+                className={`font-medium transition relative ${
+                  pathname === '/instructors' 
+                    ? 'text-primary' 
+                    : 'text-black hover:text-primary'
+                }`}
+              >
                 Educators
+                {pathname === '/instructors' && (
+                  <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary"></span>
+                )}
               </Link>
-              <Link href="/blog" className="text-black font-medium hover:text-primary transition">
+              <Link 
+                href="/blog" 
+                className={`font-medium transition relative ${
+                  pathname === '/blog' || pathname?.startsWith('/blog/')
+                    ? 'text-primary' 
+                    : 'text-black hover:text-primary'
+                }`}
+              >
                 Blog
+                {(pathname === '/blog' || pathname?.startsWith('/blog/')) && (
+                  <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary"></span>
+                )}
               </Link>
-              <Link href="/contact" className="text-black font-medium hover:text-primary transition">
+              <Link 
+                href="/contact" 
+                className={`font-medium transition relative ${
+                  pathname === '/contact' 
+                    ? 'text-primary' 
+                    : 'text-black hover:text-primary'
+                }`}
+              >
                 Contact Us
-              </Link>
-              <Link href="/contribute" className="text-black font-medium hover:text-primary transition">
-                Contribute
+                {pathname === '/contact' && (
+                  <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary"></span>
+                )}
               </Link>
             </div>
 
-            {/* Search & Auth */}
+            {/* Search & CTA */}
             <div className="hidden lg:flex items-center space-x-4">
               <div className="relative">
                 <input
@@ -88,10 +152,10 @@ export default function Header() {
                 </button>
               </div>
               <Link
-                href="/register"
-                className="bg-secondary text-white px-6 py-2 rounded-full font-semibold hover:bg-opacity-90 transition flex items-center"
+                href="/contribute"
+                className="bg-secondary text-white px-6 py-2.5 rounded-full font-semibold hover:bg-opacity-90 transition flex items-center shadow-md shadow-secondary/30"
               >
-                Register - It&apos;s Free
+                Contribute
                 <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
@@ -131,41 +195,70 @@ export default function Header() {
 
           {/* Mobile Menu */}
           {isMenuOpen && (
-            <div className="lg:hidden mt-4 space-y-4 pb-4">
-              <Link href="/" className="block text-black hover:text-primary font-medium">
+            <div className="lg:hidden mt-4 space-y-3 pb-4 bg-white rounded-lg shadow-lg p-4">
+              <Link 
+                href="/" 
+                className={`block font-medium transition ${
+                  pathname === '/' ? 'text-primary' : 'text-black hover:text-primary'
+                }`}
+              >
                 Home
               </Link>
-              <Link href="/courses" className="block text-black hover:text-primary font-medium">
+              <Link 
+                href="/courses" 
+                className={`block font-medium transition ${
+                  pathname === '/courses' ? 'text-primary' : 'text-black hover:text-primary'
+                }`}
+              >
                 Courses
               </Link>
-              <Link href="/about" className="block text-black hover:text-primary font-medium">
+              <Link 
+                href="/about" 
+                className={`block font-medium transition ${
+                  pathname === '/about' ? 'text-primary' : 'text-black hover:text-primary'
+                }`}
+              >
                 About
               </Link>
               <Link 
                 href="/promoters" 
                 onClick={handlePromotersClick}
-                className="block text-black hover:text-primary font-medium"
+                className={`block font-medium transition ${
+                  pathname === '/promoters' ? 'text-primary' : 'text-black hover:text-primary'
+                }`}
               >
                 Promoters
               </Link>
-              <Link href="/instructors" className="block text-black hover:text-primary font-medium">
+              <Link 
+                href="/instructors" 
+                className={`block font-medium transition ${
+                  pathname === '/instructors' ? 'text-primary' : 'text-black hover:text-primary'
+                }`}
+              >
                 Educators
               </Link>
-              <Link href="/blog" className="block text-black hover:text-primary font-medium">
+              <Link 
+                href="/blog" 
+                className={`block font-medium transition ${
+                  pathname === '/blog' || pathname?.startsWith('/blog/') ? 'text-primary' : 'text-black hover:text-primary'
+                }`}
+              >
                 Blog
               </Link>
-              <Link href="/contact" className="block text-black hover:text-primary font-medium">
+              <Link 
+                href="/contact" 
+                className={`block font-medium transition ${
+                  pathname === '/contact' ? 'text-primary' : 'text-black hover:text-primary'
+                }`}
+              >
                 Contact Us
-              </Link>
-              <Link href="/contribute" className="block text-black hover:text-primary font-medium">
-                Contribute
               </Link>
               <div className="pt-4 space-y-2 border-t">
                 <Link
-                  href="/register"
-                  className="block bg-secondary text-white px-6 py-2 rounded-full text-center font-semibold"
+                  href="/contribute"
+                  className="block bg-secondary text-white px-6 py-3 rounded-full text-center font-semibold shadow-md"
                 >
-                  Register - It&apos;s Free
+                  Contribute
                 </Link>
               </div>
             </div>

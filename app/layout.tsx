@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import "swiper/css";
+import "swiper/css/navigation";
 
 export const metadata: Metadata = {
   title: "AARTI - Aausaheb Research and Training Institute",

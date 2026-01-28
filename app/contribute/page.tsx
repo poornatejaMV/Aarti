@@ -343,7 +343,7 @@ export default function Contribute() {
                           Amount: ₹{amount || '0'}
                         </p>
                         <p className="text-sm text-gray-600 italic mb-3">
-                          Click the "Contribute" button to complete payment in your UPI app or scan the QR code.
+                          Click the &quot;Contribute&quot; button to complete payment in your UPI app or scan the QR code.
                         </p>
                         <div className="bg-green-50 p-3 rounded-md border border-green-500 mt-3">
                           <p className="text-xs text-green-800 font-semibold mb-1">
@@ -443,7 +443,7 @@ export default function Contribute() {
                           </h4>
                           <ul className="list-disc list-inside space-y-2 text-sm text-gray-600 leading-relaxed">
                             <li>
-                              Please write the cheque/DD in the name of "Maratha Samaj Pratishthan"
+                              Please write the cheque/DD in the name of &quot;Maratha Samaj Pratishthan&quot;
                             </li>
                             <li>
                               Amount in cheque/DD: <strong className="text-primary">₹{amount || '0'}</strong>
@@ -537,10 +537,10 @@ export default function Contribute() {
                           </h4>
                           <ol className="list-decimal list-inside space-y-2 text-sm text-gray-700 leading-relaxed">
                             <li>
-                              Log in to your bank's net banking portal
+                              Log in to your bank&apos;s net banking portal
                             </li>
                             <li>
-                              Select "Fund Transfer" or "NEFT/RTGS" option
+                              Select &quot;Fund Transfer&quot; or &quot;NEFT/RTGS&quot; option
                             </li>
                             <li>
                               Enter the above bank account details (Account Number, IFSC Code)
