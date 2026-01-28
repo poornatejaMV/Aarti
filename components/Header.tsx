@@ -10,6 +10,51 @@ export default function Header() {
   const pathname = usePathname();
   const router = useRouter();
 
+  const navItems = [
+    {
+      label: 'Home',
+      href: '/',
+      isActive: (path: string | null) => path === '/',
+    },
+    {
+      label: 'About Us',
+      href: '/about',
+      isActive: (path: string | null) => path === '/about',
+    },
+    {
+      label: 'Our Courses',
+      href: '/courses',
+      isActive: (path: string | null) => path === '/courses',
+    },
+    {
+      label: 'Educators',
+      href: '/instructors',
+      isActive: (path: string | null) => path === '/instructors',
+    },
+    {
+      label: 'Promoters',
+      href: '/#promoters',
+      // Treat Promoters as part of the home page section
+      isActive: (path: string | null) => path === '/',
+    },
+    {
+      label: 'Gallery',
+      href: '/gallery',
+      isActive: (path: string | null) => path === '/gallery',
+    },
+    {
+      label: 'News & Blogs',
+      href: '/blog',
+      isActive: (path: string | null) =>
+        path === '/blog' || (path ?? '').startsWith('/blog/'),
+    },
+    {
+      label: 'Contact Us',
+      href: '/contact',
+      isActive: (path: string | null) => path === '/contact',
+    },
+  ];
+
   const handlePromotersClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
 
@@ -49,142 +94,32 @@ export default function Header() {
 
             {/* Desktop Menu */}
             <div className="hidden lg:flex items-center space-x-6">
-              {/* Home */}
-              <Link 
-                href="/" 
-                className={`font-medium transition relative ${
-                  pathname === '/' 
-                    ? 'text-primary' 
-                    : 'text-black hover:text-primary'
-                }`}
-              >
-                Home
-                {pathname === '/' && (
-                  <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary"></span>
-                )}
-              </Link>
+              {navItems.map((item) => {
+                const isPromoters = item.label === 'Promoters';
+                const active = item.isActive(pathname);
 
-              {/* About Us */}
-              <Link 
-                href="/about" 
-                className={`font-medium transition relative ${
-                  pathname === '/about' 
-                    ? 'text-primary' 
-                    : 'text-black hover:text-primary'
-                }`}
-              >
-                About Us
-                {pathname === '/about' && (
-                  <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary"></span>
-                )}
-              </Link>
-
-              {/* Courses */}
-              <Link 
-                href="/courses" 
-                className={`font-medium transition relative ${
-                  pathname === '/courses' 
-                    ? 'text-primary' 
-                    : 'text-black hover:text-primary'
-                }`}
-              >
-                Our Courses
-                {pathname === '/courses' && (
-                  <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary"></span>
-                )}
-              </Link>
-
-              {/* Educators */}
-              <Link 
-                href="/instructors" 
-                className={`font-medium transition relative ${
-                  pathname === '/instructors' 
-                    ? 'text-primary' 
-                    : 'text-black hover:text-primary'
-                }`}
-              >
-                Educators
-                {pathname === '/instructors' && (
-                  <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary"></span>
-                )}
-              </Link>
-
-              {/* Promoters */}
-              <Link 
-                href="/#promoters" 
-                onClick={handlePromotersClick}
-                className={`font-medium transition relative ${
-                  pathname === '/promoters' 
-                    ? 'text-primary' 
-                    : 'text-black hover:text-primary'
-                }`}
-              >
-                Promoters
-                {pathname === '/promoters' && (
-                  <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary"></span>
-                )}
-              </Link>
-
-              {/* Gallery */}
-              <Link 
-                href="/gallery" 
-                className={`font-medium transition relative ${
-                  pathname === '/gallery' 
-                    ? 'text-primary' 
-                    : 'text-black hover:text-primary'
-                }`}
-              >
-                Gallery
-                {pathname === '/gallery' && (
-                  <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary"></span>
-                )}
-              </Link>
-
-              {/* News & Blogs */}
-              <Link 
-                href="/blog" 
-                className={`font-medium transition relative ${
-                  pathname === '/blog' || pathname?.startsWith('/blog/')
-                    ? 'text-primary' 
-                    : 'text-black hover:text-primary'
-                }`}
-              >
-                News &amp; Blogs
-                {(pathname === '/blog' || pathname?.startsWith('/blog/')) && (
-                  <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary"></span>
-                )}
-              </Link>
-
-              {/* Contact Us */}
-              <Link 
-                href="/contact" 
-                className={`font-medium transition relative ${
-                  pathname === '/contact' 
-                    ? 'text-primary' 
-                    : 'text-black hover:text-primary'
-                }`}
-              >
-                Contact Us
-                {pathname === '/contact' && (
-                  <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary"></span>
-                )}
-              </Link>
+                return (
+                  <Link
+                    key={item.label}
+                    href={item.href}
+                    onClick={isPromoters ? handlePromotersClick : undefined}
+                    className={`font-medium transition relative ${
+                      active ? 'text-primary' : 'text-black hover:text-primary'
+                    }`}
+                    aria-current={active ? 'page' : undefined}
+                  >
+                    {item.label}
+                    {active && (
+                      <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary"></span>
+                    )}
+                  </Link>
+                );
+              })}
             </div>
 
-            {/* Search & CTA */}
+            {/* Search & CTA - search temporarily disabled as requested */}
             <div className="hidden lg:flex items-center space-x-4">
-              <div className="relative">
-                <input
-                  type="text"
-                  placeholder="Search Courses"
-                  className="pl-4 pr-10 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-primary/50"
-                />
-                <button className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                  </svg>
-                </button>
-              </div>
+              {/* Search input removed */}
               <Link
                 href="/contribute"
                 className="bg-secondary text-white px-6 py-2.5 rounded-full font-semibold hover:bg-opacity-90 transition flex items-center shadow-md shadow-secondary/30"
@@ -230,86 +165,24 @@ export default function Header() {
           {/* Mobile Menu */}
           {isMenuOpen && (
             <div className="lg:hidden mt-4 space-y-3 pb-4 bg-white rounded-lg shadow-lg p-4">
-              {/* Home */}
-              <Link 
-                href="/" 
-                className={`block font-medium transition ${
-                  pathname === '/' ? 'text-primary' : 'text-black hover:text-primary'
-                }`}
-              >
-                Home
-              </Link>
+              {navItems.map((item) => {
+                const isPromoters = item.label === 'Promoters';
+                const active = item.isActive(pathname);
 
-              {/* About Us */}
-              <Link 
-                href="/about" 
-                className={`block font-medium transition ${
-                  pathname === '/about' ? 'text-primary' : 'text-black hover:text-primary'
-                }`}
-              >
-                About Us
-              </Link>
-
-              {/* Courses */}
-              <Link 
-                href="/courses" 
-                className={`block font-medium transition ${
-                  pathname === '/courses' ? 'text-primary' : 'text-black hover:text-primary'
-                }`}
-              >
-                Our Courses
-              </Link>
-
-              {/* Educators */}
-              <Link 
-                href="/instructors" 
-                className={`block font-medium transition ${
-                  pathname === '/instructors' ? 'text-primary' : 'text-black hover:text-primary'
-                }`}
-              >
-                Educators
-              </Link>
-
-              {/* Promoters */}
-              <Link 
-                href="/#promoters" 
-                onClick={handlePromotersClick}
-                className={`block font-medium transition ${
-                  pathname === '/promoters' ? 'text-primary' : 'text-black hover:text-primary'
-                }`}
-              >
-                Promoters
-              </Link>
-
-              {/* Gallery */}
-              <Link 
-                href="/gallery" 
-                className={`block font-medium transition ${
-                  pathname === '/gallery' ? 'text-primary' : 'text-black hover:text-primary'
-                }`}
-              >
-                Gallery
-              </Link>
-
-              {/* News & Blogs */}
-              <Link 
-                href="/blog" 
-                className={`block font-medium transition ${
-                  pathname === '/blog' || pathname?.startsWith('/blog/') ? 'text-primary' : 'text-black hover:text-primary'
-                }`}
-              >
-                News &amp; Blogs
-              </Link>
-
-              {/* Contact Us */}
-              <Link 
-                href="/contact" 
-                className={`block font-medium transition ${
-                  pathname === '/contact' ? 'text-primary' : 'text-black hover:text-primary'
-                }`}
-              >
-                Contact Us
-              </Link>
+                return (
+                  <Link
+                    key={item.label}
+                    href={item.href}
+                    onClick={isPromoters ? handlePromotersClick : undefined}
+                    className={`block font-medium transition ${
+                      active ? 'text-primary' : 'text-black hover:text-primary'
+                    }`}
+                    aria-current={active ? 'page' : undefined}
+                  >
+                    {item.label}
+                  </Link>
+                );
+              })}
               <div className="pt-4 space-y-2 border-t">
                 <Link
                   href="/contribute"

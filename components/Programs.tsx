@@ -82,30 +82,7 @@ export default function Programs() {
           </h2>
         </div>
 
-        {/* Maratha Hostel Works Grid (larger cards, last centered) */}
-        <div className="flex flex-wrap justify-center gap-8">
-          {marathaHostelWorks.map((work, index) => (
-            <div
-              key={work.id}
-              className={`group bg-white rounded-2xl p-6 border border-gray-100 shadow-[0_10px_30px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_40px_rgba(0,0,0,0.10)] transition-all duration-300 hover:-translate-y-1 program-card w-full md:w-[48%] lg:w-[48%] ${
-                index === marathaHostelWorks.length - 1 ? 'md:w-[60%] lg:w-[60%] md:mx-auto' : ''
-              }`}
-            >
-              <div className="relative mb-6 program-image-container overflow-hidden rounded-xl">
-                <div className="relative w-full" style={{ aspectRatio: '282/188' }}>
-                  <Image
-                    src={work.image}
-                    alt={work.alt}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  {/* Hover Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+        {/* Maratha Hostel Works Grid (larger cards, last centered) - temporarily disabled as requested */}
       </div>
 
       {/* Custom Styles */}
