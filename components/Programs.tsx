@@ -11,9 +11,36 @@ export default function Programs() {
   ];
 
   const marathaHostelWorks = [
-    { id: 1, image: '/images/works/1.jpg', alt: 'Towards Maratha Hostel - Work 1' },
-    { id: 2, image: '/images/works/2.jpg', alt: 'Towards Maratha Hostel - Work 2' },
-    { id: 3, image: '/images/works/3.jpg', alt: 'Towards Maratha Hostel - Work 3' },
+    {
+      id: 1,
+      image: '/images/works/maratha-hostel-kotwalpura-aurangabad-maharashtra-hostel-for-boy-students-g00djlxmzr.avif',
+      alt: 'Maratha Hostel, Kotwalpura Aurangabad - Exterior view',
+    },
+    {
+      id: 2,
+      image: '/images/works/mahratta-hostel-basavanagudi-bangalore-hostels-mxrflg9wd9.avif',
+      alt: 'Mahratta Hostel, Basavanagudi Bangalore - Street view',
+    },
+    {
+      id: 3,
+      image: '/images/works/download.jpeg',
+      alt: 'Maratha Hostel archival photograph',
+    },
+    {
+      id: 4,
+      image: '/images/works/download (1).jpeg',
+      alt: 'Maratha Hostel campus and surroundings',
+    },
+    {
+      id: 5,
+      image: '/images/works/download (2).jpeg',
+      alt: 'Maratha Hostel interior facilities',
+    },
+    {
+      id: 6,
+      image: '/images/works/download (3).jpeg',
+      alt: 'Maratha Hostel students and activities',
+    },
   ];
 
   return (
@@ -82,7 +109,28 @@ export default function Programs() {
           </h2>
         </div>
 
-        {/* Maratha Hostel Works Grid (larger cards, last centered) - temporarily disabled as requested */}
+        {/* Maratha Hostel Works Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {marathaHostelWorks.map((work) => (
+            <div
+              key={work.id}
+              className="group bg-white rounded-2xl p-6 border border-gray-100 shadow-[0_10px_30px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_40px_rgba(0,0,0,0.10)] transition-all duration-300 hover:-translate-y-1 program-card w-full"
+            >
+              <div className="relative mb-6 program-image-container overflow-hidden rounded-xl bg-white">
+                <div className="relative w-full" style={{ aspectRatio: '4/3' }}>
+                  <Image
+                    src={work.image}
+                    alt={work.alt}
+                    fill
+                    className="object-contain group-hover:scale-105 transition-transform duration-300"
+                  />
+                  {/* Hover Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* Custom Styles */}
