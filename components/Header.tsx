@@ -68,6 +68,9 @@ export default function Header() {
               <Link href="/contact" className="text-black font-medium hover:text-primary transition">
                 Contact Us
               </Link>
+              <Link href="/contribute" className="text-black font-medium hover:text-primary transition">
+                Contribute
+              </Link>
             </div>
 
             {/* Search & Auth */}
@@ -153,6 +156,9 @@ export default function Header() {
               </Link>
               <Link href="/contact" className="block text-black hover:text-primary font-medium">
                 Contact Us
+              </Link>
+              <Link href="/contribute" className="block text-black hover:text-primary font-medium">
+                Contribute
               </Link>
               <div className="pt-4 space-y-2 border-t">
                 <Link
