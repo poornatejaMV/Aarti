@@ -75,8 +75,8 @@ export default function Header() {
     <>
       <header className="sticky top-0 z-50 bg-white shadow-sm">
         <nav className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <Link href="/" className="flex items-center gap-3">
+          <div className="flex items-center gap-6 lg:gap-10">
+            <Link href="/" className="flex items-center gap-3 flex-shrink-0">
               <Image
                 src="/images/aarti_logo.jpeg"
                 alt="AARTI Logo"
@@ -93,7 +93,7 @@ export default function Header() {
             </Link>
 
             {/* Desktop Menu */}
-            <div className="hidden lg:flex items-center space-x-6">
+            <div className="hidden lg:flex flex-1 items-center justify-center gap-10">
               {navItems.map((item) => {
                 const isPromoters = item.label === 'Promoters';
                 const active = item.isActive(pathname);
@@ -117,8 +117,8 @@ export default function Header() {
               })}
             </div>
 
-            {/* Search & CTA - search temporarily disabled as requested */}
-            <div className="hidden lg:flex items-center space-x-4">
+            {/* CTA */}
+            <div className="hidden lg:flex items-center justify-end flex-shrink-0">
               {/* Search input removed */}
               <Link
                 href="/contribute"
